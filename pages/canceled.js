@@ -4,7 +4,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping} from '
 import Link from 'next/link';
 
 
-const canceled = () => {
+const Canceled = () => {
 
   const {setShowCart, cartItems, totalPrice,
     totalQuantities, toggleCartItemQuanitity, onRemove} = useStateContext();
@@ -31,4 +31,4 @@ const canceled = () => {
   )
 }
 
-export default canceled
+export default Canceled
