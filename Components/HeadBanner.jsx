@@ -9,7 +9,7 @@ const HeadBanner = ({headBanner}) => {
     <div className='head-banner-container'>
       <div className='banner-desc'>
         <div className="left">
-          <p>Shop > headphones</p>
+          <p>Shop &gt; headphones</p>
           <h3>Head</h3>
           <h3>Phones</h3>
           <p></p>
