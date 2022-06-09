@@ -9,7 +9,7 @@ const ProductBanner = ({productBanner}) => {
     <div className='product-banner-container'>
       <div className='banner-desc'>
         <div className="left">
-          <p>Shop > smartwatches</p>
+          <p>Shop &gt; smartwatches</p>
           <h3>SMART</h3>
           <h3>WATCHES</h3>
           <p></p>
