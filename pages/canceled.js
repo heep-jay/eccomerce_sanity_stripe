@@ -1,14 +1,13 @@
 import React from 'react'
 import { useStateContext } from '../Context/StateContext';
-import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping} from 'react-icons/ai';
+import {  AiOutlineShopping } from 'react-icons/ai';
 import Link from 'next/link';
 
 
 const Canceled = () => {
 
-  const {setShowCart, cartItems, totalPrice,
-    totalQuantities, toggleCartItemQuanitity, onRemove} = useStateContext();
-    console.log(cartItems);
+  const {setShowCart} = useStateContext();
+  
   return (
   
       <div className="product-container">
