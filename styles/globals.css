@@ -31,7 +31,177 @@ width: 100%;
   justify-content: space-between;
   margin: 6px 18px;
   position: relative;
+  width: 95%;
+  
+  /* display: flex;
+  justify-content: space-between; */
+  align-items: center;
+
+ padding: 2rem 2rem;
+ /* background: rgba(255, 255, 255, 0.25);
+ box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
+  position: fixed;
+  z-index: 2; 
 }
+.navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  
+}
+@media screen and (min-width: 2000px) {
+  .navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    
+  }
+}
+.navbar-mid{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+
+}
+.navbar-mid li {
+  margin: 0 1rem;
+    cursor: pointer;
+
+    flex-direction: column;
+}
+.navbar-mid div {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border-radius: 50%;
+
+  margin-bottom: 5px;
+}
+.navbar-mid a {
+  color: gray;
+  text-decoration: none;
+  flex-direction: column;
+
+  text-transform: uppercase;
+  font-weight: 500;
+
+  transition: all 0.3s ease-in-out;
+
+ 
+}
+
+.navbar-menu {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+
+.navbar-menu svg {
+  width: 70%;
+  height: 70%;
+  color: red;
+}
+
+.navbar-menu div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+
+  padding: 1rem;
+
+  width: 80%;
+  height: 100vh;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+  background: url('https://www.retcoopstore.com/wp-content/uploads/2020/04/Apple-AirPod-Wireless-White.jpg');
+  
+  background-color: white;
+  background-size: cover;
+  background-repeat: repeat;
+
+  /* top box shadow */
+  box-shadow: 0px 0px 20px rgba(168, 168, 168, 0.15);
+
+}
+.navbar-menu > div > svg {
+  
+    width: 35px;
+    height: 35px;
+    color: red;
+    margin: 0.5rem 1rem;
+  
+}
+.navbar-menu > div > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.navbar-menu > div > ul > li {
+
+  margin: 2rem;
+}
+.navbar-menu > div > ul > li > a {
+  color: gray;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+
+  transition: all 0.5s ease-in-out;
+}
+
+.navbar-menu > div > ul > li > a:hover {
+  color: red;
+  cursor: pointer;
+}
+@media screen and (min-width: 900px) {
+  .navbar-menu{
+    display: none;
+  }
+  
+}
+
+@media screen and (min-width: 900px) {
+  .navbar-menu{
+    display: none;
+  }
+
+}
+
+.navbar-mid a:hover {
+  color: red;
+}
+
+.navbar-menu{
+  display: none;
+}
+
 .marquee-text{
   font-size: 29px;
   font-weight: 600;
@@ -117,6 +287,7 @@ width: 100%;
  background-color: #ebebeb;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+ 
 }
 
 .product-name{
@@ -136,6 +307,7 @@ width: 100%;
   height: 500px;
   line-height: 0.9; 
   width: 100%;
+  margin-top: 7rem;
 
 }
 .hero-banner-container .beats-solo{
@@ -211,6 +383,28 @@ text-align: end;
 .products-heading p{
   font-size: 16px;
   font-weight: 200;
+}
+.product-banner-container{
+  padding: 100px 40px;
+  background-color: #494747;
+  border-radius: 15px;
+  position: relative;
+  height: 400px;
+  line-height: 1; 
+  color: rgb(255, 255, 255);
+  width: 100%;
+  margin-top: 10rem;
+}
+.head-banner-container{
+  padding: 100px 40px;
+  background-color: orange;
+  border-radius: 15px;
+  position: relative;
+  height: 400px;
+  line-height: 1; 
+  color: white;
+  width: 100%;
+  margin-top: 10rem;
 }
 .footer-banner-container{
   padding: 100px 40px;
@@ -350,7 +544,7 @@ padding: 20px 10px;
 .product .cart-product-image{
   width:180px ;
   height: 150px;
-    border-radius: 15px;
+  border-radius: 15px;
  background-color: #ebebeb;
 }
 .item-desc .flex{
@@ -420,7 +614,7 @@ padding: 30px 65px;
   display: flex;
  gap: 40px;
  margin: 40px;
- margin-top: 60px;
+ margin-top: 7rem;
  color: #324d67;
 
 }
@@ -623,6 +817,23 @@ margin-top: 160px;
 @media screen and (max-width:800px) {
   .hero-banner-container{
     height: 560px;
+    margin-top: 7rem;
+  }
+  .navbar-container{
+    display: flex;
+  }
+  .navbar-mid{
+    display: none;
+  }
+.navbar-logo{
+  display: none;
+}
+  .navbar-menu{
+    display: block;
+    position: relative;
+  }
+  .navbar-cart{
+    display: block;
   }
   .hero-banner-image{
     width: 77%;
@@ -631,9 +842,15 @@ margin-top: 160px;
     right: -6%;
     object-fit:contain
   }
+  .product-banner-container{
+    height: 560px;
+    margin-top: 80px;
+    margin-top: 6.8rem;
+  }
   .footer-banner-container{
     height: 560px;
     margin-top: 80px;
+    
   }
   .footer-banner-image{
     width: 77%;
@@ -711,7 +928,7 @@ margin-top: 160px;
     width: 150px;
   }
   .product-detail-container{
-    margin: 20px;
+    margin-top: 7rem 0.5rem;
   }
 
 .item-desc .flex{

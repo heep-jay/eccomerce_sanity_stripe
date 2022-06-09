@@ -11,7 +11,7 @@ const Cart = () => {
   const cartRef = useRef();
   const {setShowCart, cartItems, totalPrice,
     totalQuantities, toggleCartItemQuanitity, onRemove} = useStateContext();
-    console.log(cartItems);
+    // console.log(cartItems);
 
     const handleCheckout = async ()=>{
       const stripe = await getStripe();
@@ -54,7 +54,7 @@ const Cart = () => {
         )}
         
         <div className="product-container">
-        {cartItems.length >= 1 && cartItems.map((item) => (
+        {cartItems?.length >= 1 && cartItems?.map((item) => (
           <div className="product" key={item._id}>
             <img src={urlFor(item?.image[0])} className="cart-product-image" />
             <div className="item-desc">
@@ -77,6 +77,7 @@ const Cart = () => {
                   className="remove-item"
                   onClick={() => onRemove(item)}
                 >
+                  {console.log(item)}
                   <TiDeleteOutline />
                 </button>
               </div>
