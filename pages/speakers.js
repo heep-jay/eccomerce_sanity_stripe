@@ -6,4 +6,4 @@ const Speakers = () => {
   )
 }
 
-export default Speajkers
+export default Speakers
