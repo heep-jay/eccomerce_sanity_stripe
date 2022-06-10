@@ -13,7 +13,7 @@ const Smartwatches = ({product, headphones }) => {
 
       <div className='products-heading'>
         <h2>Smartwatches</h2>
-        <p>Speakers of many variations passages</p>
+        <p>Smartwatches of many variations passages</p>
       </div>
       <div className='products-container'>
         {newProducts?.map(

@@ -4,14 +4,14 @@ import { urlFor } from '../lib/client';
 
 const ProductBanner = ({productBanner}) => {
    const { name, image} = productBanner;
-   console.log(image)
+  
   return (
     <div className='product-banner-container'>
       <div className='banner-desc'>
         <div className="left">
           <p>Shop &gt; smartwatches</p>
-          <h3>SMART</h3>
-          <h3>WATCHES</h3>
+          <h3>Smart</h3>
+          <h3>Watches</h3>
           <p></p>
         </div>
         <div className="right">
@@ -23,7 +23,7 @@ const ProductBanner = ({productBanner}) => {
           
           </Link> */}
         </div>
-        <img src={urlFor(image && image[1])} alt="" className="footer-banner-image" />
+        <img src={urlFor(image && image[1])} alt="" className="banner-banner-image" />
       </div>
     </div>
 

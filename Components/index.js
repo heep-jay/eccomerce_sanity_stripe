@@ -7,3 +7,5 @@ export { default as Navbar } from './Navbar';
 export { default as Product} from './Product';
 export { default as ProductBanner } from './ProductBanner';
 export { default as HeadBanner } from './HeadBanner';
+export { default as EarbudsBanner } from './EarbudsBanner';
+export { default as SpeakerBanner } from './SpeakerBanner';

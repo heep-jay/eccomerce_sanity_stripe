@@ -13,29 +13,55 @@ export const StateContext = ({children}) =>{
     let foundProduct;
     let index;
 
-    const onAdd = (product, quantity) => {
-        const CheckProductInCart = cartItems.find((item) => item?._id === product._id);
-        
-        setTotalPrice((prevTotalprice)=> prevTotalprice + product.price * quantity);
-        setTotalQuantities((prevTotalQtys) => prevTotalQtys + quantity);
+    useEffect(() => {
+      if (localStorage.getItem("cart")) {
+        setCartItems(JSON.parse(localStorage.getItem("cart")));
+        JSON.parse(localStorage.getItem("cart")).map((item) => {
+          setTotalQuantities(
+            (prevTotalQuantities) => prevTotalQuantities + item.quantity
+          );
+          setTotalPrice(
+            (prevTotalPrice) => prevTotalPrice + item.price * item.quantity
+          );
+        });
+      }
+    }, []);
 
-        if (CheckProductInCart){
-            const updateCartItems = cartItems.map((cartProduct) => {
-                if(cartProduct._id === product._id) return {
-                    ...cartProduct,
-                    quantity: cartProduct.quantity + quantity
-                }
-            
-            })
-            setCartItems(updateCartItems);
-            ; 
-            } else{
-                product.quantity = quantity;
-                setCartItems([...cartItems, {...product}])
+    const onAdd = (product, quantity) => {
+        const checkProductInCart = cartItems.find(
+          (item) => item._id === product._id
+        );
+    
+        if (checkProductInCart) {
+          const updatedCartItems = cartItems.map((item) => {
+            if (item._id === product._id) {
+              const newQty = item.quantity + quantity;
+              return {
+                ...item,
+                quantity: newQty,
+              };
+            } else {
+              return {
+                ...item,
+              };
             }
-            toast.success(`${qty}' '${product.name} added to cart.`)
-                
+          });
+          setCartItems(updatedCartItems);
+          localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+        } else {
+          product.quantity = quantity;
+          setCartItems([...cartItems, { ...product }]);
+          localStorage.setItem(
+            "cart",
+            JSON.stringify([...cartItems, { ...product }])
+          );
         }
+        setTotalPrice(
+          (prevTotalPrice) => prevTotalPrice + product.price * quantity
+        );
+        setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + quantity);
+        toast.success(`${qty} ${product.name} added to cart.`);
+      }
 
     const toggleCartItemQuanitity = (id, value) => {
         foundProduct = cartItems.find((item) => item._id === id)

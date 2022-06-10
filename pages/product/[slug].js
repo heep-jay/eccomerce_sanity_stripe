@@ -137,7 +137,7 @@ export const getStaticPaths = async () => {
     
     const product = await client.fetch(query);
     const products = await client.fetch(productsQuery);
-    // console.log(products);
+
     
   
    

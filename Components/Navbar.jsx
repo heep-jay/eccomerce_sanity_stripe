@@ -7,7 +7,7 @@ import { useStateContext } from '../Context/StateContext';
 
 const Navbar = () => {
   const {qty, showCart, setShowCart, totalQuantities} = useStateContext();
-  console.log(totalQuantities)
+  
 
   const [toggle, setToggle] = useState(false);
   return (
@@ -20,7 +20,14 @@ const Navbar = () => {
       </div>
       
       <ul className="navbar-mid">
-        {['smartwatches', 'headphones', 'speakers'].map((item) => (
+        
+
+          <li  key={`link-home`} className="app__flex p-text">
+            <div/>
+            <Link href={`/`}>Home</Link>
+          </li>
+      
+        {['smartwatches', 'headphones', "earbuds", 'speakers'].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             <div />
             <Link href={`/${item}`}>{item}</Link>
@@ -58,7 +65,7 @@ const Navbar = () => {
                 </a>
               </li>
           ))}
-      {['smartwatches', 'headphones', 'speakers'].map((item) => (
+      {['smartwatches', 'headphones', 'earbuds', 'speakers'].map((item) => (
 
         <li key={item}>
           <a href={`/${item}`} onClick={() => setToggle(false)}>

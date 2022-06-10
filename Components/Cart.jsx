@@ -11,7 +11,7 @@ const Cart = () => {
   const cartRef = useRef();
   const {setShowCart, cartItems, totalPrice,
     totalQuantities, toggleCartItemQuanitity, onRemove} = useStateContext();
-    // console.log(cartItems);
+    
 
     const handleCheckout = async ()=>{
       const stripe = await getStripe();
@@ -77,13 +77,13 @@ const Cart = () => {
                   className="remove-item"
                   onClick={() => onRemove(item)}
                 >
-                  {console.log(item)}
+                 
                   <TiDeleteOutline />
                 </button>
               </div>
             </div>
           </div>
-        ))}
+        ))} 
       </div>
       {cartItems.length >= 1 &&
       (

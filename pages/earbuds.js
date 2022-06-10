@@ -1,23 +1,22 @@
 import React from 'react';
-import { Product, SpeakerBanner} from '../Components';
+import { Product, EarbudsBanner} from '../Components';
 // import ProductBanner from '../Components/ProductBanner';
 import { client, urlFor } from '../lib/client';
 
 
 
-const Speakers = ({product, headphones }) => {
+const Earbuds = ({product, headphones }) => {
   
   const newProducts = product.slice(0,5);
 
-
   return (
     <>
-    <SpeakerBanner speakerBanner={product.length && product[1]}/>
+    <EarbudsBanner earbudsBanner={product.length && product[5]}/>
     
 
       <div className='products-heading'>
-        <h2>Speakers</h2>
-        <p>Speakers of many variations passages</p>
+        <h2>Earbuds</h2>
+        <p>Earbuds of many variations passages</p>
       </div>
       <div className='products-container'>
         {newProducts?.map(
@@ -45,7 +44,7 @@ const Speakers = ({product, headphones }) => {
 export const getServerSideProps = async () => {
  
 
-  const productBannerQuery = `*[_type == "product" && category == 'speakers']`
+  const productBannerQuery = `*[_type == "product" && category == 'earbuds']`
   const product = await client.fetch(productBannerQuery);
 
   const headQuery = `*[_type == "product" && category == 'headphones']`
@@ -58,4 +57,4 @@ export const getServerSideProps = async () => {
 
 }
 
-export default Speakers
+export default Earbuds
